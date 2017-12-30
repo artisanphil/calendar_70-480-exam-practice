@@ -13,9 +13,9 @@ header {
 ul {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  grid-gap: 1em;
+  grid-gap: 1vh;
   margin: 0 auto;
-  max-width: 64em;
+  width: 84vh;
   padding: 0;
 }
 
@@ -39,7 +39,8 @@ ul.weekdays li {
 ul.day-grid li {
   background-color: #eaeaea;
   border: 1px solid #eaeaea;
-  height: 12vw;
+  height: 11vh;
+  width: 11vh;
   max-height: 125px;
 }
 
