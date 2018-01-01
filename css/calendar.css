@@ -1,3 +1,7 @@
+body {
+  font-family: 'Spectral SC', serif;
+}
+
 header {
   display: flex;
   align-items: center;
@@ -26,7 +30,7 @@ li {
   list-style: none;
   margin-left: 0;
   font-size: calc(16px + (21 - 16) * ((100vw - 300px) / (1600 - 300)));
-
+ 
   height: auto;
   width: auto;
 }
@@ -45,19 +49,25 @@ ul.day-grid li {
   border: 1px solid #eaeaea;
 }
 
+ul.day-grid li:hover {
+  background-color: #d0aac0;
+}
+
 ul.weekdays abbr[title] {
   border: none;
   font-weight: 800;
   text-decoration: none;
 }
 
+/* 
 ul.day-grid li:nth-child(1),
 ul.day-grid li:nth-child(2),
 ul.day-grid li:nth-child(3),
 ul.day-grid li:nth-child(34),
 ul.day-grid li:nth-child(35) {
   background-color: #fff;
-}
+} 
+*/
 
 @media all and (max-width: 800px) {
   ul {
