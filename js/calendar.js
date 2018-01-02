@@ -24,7 +24,7 @@ function loadCalendar() {
   var countDays = 1;
 
   var monthyear = document.getElementById("monthyear");
-  monthyear.innerHTML = monthNames[month] + " " + year;
+  monthyear.innerHTML = monthNames[month] + " " + year; //this part of the code must be added upon when prev and next buttons are added
 
   var dayGrid = document.getElementById("daygrid");
 
@@ -36,9 +36,35 @@ function loadCalendar() {
     dayGrid.appendChild(liDay);
   }
 
-  //got this code from http://www.javascriptsource.com/time-date/simple-calendar.html, don't really understand it
-  //somehow calculates how many days there are in a month (e.g. 31)
+  //got this code from http://www.javascriptsource.com/time-date/simple-calendar.html
+
+
   var days_in_this_month = Math.round((next_month.getTime() - this_month.getTime()) / (1000 * 60 * 60 * 24));
+    //(1000 * 60 * 60 * 24) => 1000 is 1000 milliseconds.60 is 60 seconds.Next 60 is 60 minutes.24 is 24 hours.
+  //.getTime() is a little tricky.It calculates the amount of time it has been since January 1 1970.
+
+
+  //Using .getMonth() earlier we got the name of the current month.Using  .getFullYear() earlier we got our current exact year.
+  //Now,look what we assigned earlier to the variable this_month.We indirectly used the values from .getMonth() and .getFullYear().
+  //About next_month,after getting current month we added 1,to get next month.
+
+  //Now take that in.
+  //Why do we need to subtract next_month.getTime() and this_month.getTime()?
+  //Remove the following code from comments and execute,then look up in the debugger:
+
+  //console.log( Math.round(next_month.getTime() - this_month.getTime()));
+  //console.log(Math.round((next_month.getTime() - this_month.getTime()) / (1000 * 60 * 60 * 24)));
+
+
+  //The value .getTime() gives is in milliseconds.So the subtraction will also be in milliseconds.The division is to turn it into days,and Math.round() is to take care of decimals
+  //Well we can just do this_month.getTime()/(1000 * 60 * 60 *24).Why dont we do that instead.Try the following commented code.
+
+ // console.log(Math.round((this_month.getTime()) / (1000 * 60 * 60 * 24)));
+  //The value is 17532 days.It has been 17532 days since January 1 1970 upto Jan 2 2018.
+  //We subtracted with the next month,well you can try with the prev month too,but make sure while testing you have 2017 has the year for last month.
+  
+  //console.log(Math.round((next_month.getTime()) / (1000 * 60 * 60 * 24)));
+  //The value is 17563.Subtraction between two adjacent months gives the number of days of the current month after the division.
 
   for(day_counter = 1; day_counter <= days_in_this_month; day_counter++) {
     countDays++;
