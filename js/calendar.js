@@ -38,9 +38,10 @@ function loadCalendar() {
 
   //got this code from http://www.javascriptsource.com/time-date/simple-calendar.html
 
-
+ 
   var days_in_this_month = Math.round((next_month.getTime() - this_month.getTime()) / (1000 * 60 * 60 * 24));
-    //(1000 * 60 * 60 * 24) => 1000 is 1000 milliseconds.60 is 60 seconds.Next 60 is 60 minutes.24 is 24 hours.
+
+   //(1000 * 60 * 60 * 24) => 1000 is 1000 milliseconds.60 is 60 seconds.Next 60 is 60 minutes.24 is 24 hours.
   //.getTime() is a little tricky.It calculates the amount of time it has been since January 1 1970.
 
 
@@ -66,6 +67,13 @@ function loadCalendar() {
   //console.log(Math.round((next_month.getTime()) / (1000 * 60 * 60 * 24)));
   //The value is 17563.Subtraction between two adjacent months gives the number of days of the current month after the division.
 
+
+
+  /*   
+Need the following code for Event Listeners Prev and Next
+
+  */
+
   for(day_counter = 1; day_counter <= days_in_this_month; day_counter++) {
     countDays++;
     var liDay = document.createElement("li");
@@ -82,5 +90,36 @@ function loadCalendar() {
     liDay.innerHTML = "";
     dayGrid.appendChild(liDay);
   }
+
+
+
+
+document.getElementById("month-next").addEventListener("click",function(){
+
+month=month+1;
+
+if(monthNames[month]==undefined){
+  month=11;
+}
+monthyear.innerHTML=monthNames[month]+ " " + year;
+
+
+
+
+});
+
+
+document.getElementById("month-prev").addEventListener("click",function(){
+
+month=month-1;
+
+if(monthNames[month]==undefined){
+  month=0;
+}
+monthyear.innerHTML=monthNames[month]+ " " + year;
+
+
+});
+
 
 }
