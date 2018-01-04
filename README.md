@@ -25,3 +25,10 @@ git commit -m "[write a comment about the changes you made]"
 Push the branch on github :
 
 git push origin [name_of_your_new_branch]
+
+Create Pull Request :
+
+Go to the github repository and select the branch you created. You will now see a button for doing a pull request. Add a description for your changes and click on that button.
+
+Similar instructions on adding your feature to a github repository using pull request can be found here:
+https://gist.github.com/vlandham/3b2b79c40bc7353ae95a
