@@ -8,7 +8,7 @@ header {
   font-size: calc(16px + (26 - 16) * ((100vw - 300px) / (1600 - 300)));
   justify-content: center;
   margin-bottom: 10vh;
-  background: #000;
+  background: #b53f3f;
   color: #fff;
   height: 10vh;
   text-align: center;
@@ -50,7 +50,7 @@ ul.day-grid li {
 }
 
 ul.day-grid li:hover {
-  background-color: #d0aac0;
+  background-color: #d4b1b1;
 }
 
 ul.weekdays abbr[title] {
@@ -89,3 +89,29 @@ ul.day-grid li:nth-child(35) {
       height: 35vh;
     }
 }
+
+/* Styling for Previous and Next arrows */
+
+.prev-next-button {
+  position: absolute;
+  top: 50%;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: white;
+  
+}
+
+.previous { left: 10px; }
+.next { right: 10px; }
+
+.prev-next-button svg {
+  position: absolute;
+  left: 20%;
+  top: 20%;
+  width: 60%;
+  height: 60%;
+}
+
+
+.arrow { fill: #333; }
